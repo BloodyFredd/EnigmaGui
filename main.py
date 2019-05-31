@@ -5,6 +5,7 @@ from PlugBoard import PlugBoard
 from Reflector import Reflector
 from Rotor import Rotor
 from PyQt5.QtWidgets import *
+from pymsgbox import *
 
 
 # Function that checks if the rotors are okay.
@@ -21,7 +22,7 @@ def check_combo():
 # Function for the click on button.
 def on_click():
     if not check_combo():
-        Mbox('Error!', "You choose some equal rotors, the program will stop now.", 1)
+        alert(text="You choose some equal rotors, the program will stop now." + result, title="Error!",button="OK")
         window.close()
         sys.exit(0)
 
@@ -69,14 +70,8 @@ def on_click():
 
     # encryption/decryption of the word
     result = machine.encryptDecrypt(textInput.text())
-    msg = QMessageBox()
-    msg.setIcon(QMessageBox.Information)
-    Mbox('Answer', "The encryption/decryption is: " + result, 1)
 
-
-# Function for message box.
-def Mbox(title, text, style):
-    return ctypes.windll.user32.MessageBoxW(0, text, title, style)
+    alert(text="The encryption/decryption is: " + result, title="Answer",button="OK")
 
 
 # Init the gui.
