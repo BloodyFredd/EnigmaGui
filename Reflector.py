@@ -9,7 +9,10 @@ class Reflector(Translator):
 
     # The translation of each letter.
     def forwardTrans(self, letter):
-        return letter
+
+        index = self.letToInd(letter.upper())
+
+        return self.reflector[index]
 
     # The reverse translation of each letter.
     def reverseTrans(self, letter):

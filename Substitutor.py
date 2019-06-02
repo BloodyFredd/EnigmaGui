@@ -14,3 +14,17 @@ class Substitutor:
     @abstractmethod
     def reverseTrans(self, permutation):
         pass
+
+    # Turn letter to index function.
+    def letToInd(self, letter):
+        return ord(letter.upper()) - ord('A')
+
+    # The iteration to the left.
+    def leftShift(self, letter, numOfShifts):
+        return self.rightShift(letter, 26 - numOfShifts)
+
+    # The iteration to the right.
+    def rightShift(self, letter, numOfShifts):
+        if (numOfShifts < 0):
+            return (letter + 26 + numOfShifts) % 26
+        return (letter + numOfShifts) % 26
