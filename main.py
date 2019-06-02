@@ -1,4 +1,3 @@
-import ctypes
 import sys
 from Enigma import Enigma
 from PlugBoard import PlugBoard
