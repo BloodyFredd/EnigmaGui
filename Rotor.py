@@ -11,10 +11,28 @@ class Rotor(Translator):
 
     # The function to encrypt each letter.
     def encryptedLetter(self, letter):
+
+        rightShifted = self.rightShift(self.letToInd(letter), self.ringOffset - 1)
+
+        leftShifted = self.leftShift(rightShifted, self.ringSetting - 1)
+
+        translated = self.forwardTrans(chr(ord('A') + leftShifted))
+
+        result = self.rightShift(self.letToInd(translated), self.ringSetting - 1 - (self.ringOffset - 1))
+
         return result
 
     # The function to decrypt each letter.
     def decryptLetter(self, letter):
+
+        rightShifted = self.rightShift(self.letToInd(letter), self.ringOffset - 1)
+
+        leftShifted = self.leftShift(rightShifted, self.ringSetting - 1)
+
+        translated = self.reverseTrans(chr(ord('A') + leftShifted))
+
+        result = self.rightShift(self.letToInd(translated), self.ringSetting - 1 - (self.ringOffset - 1))
+
         return result
 
     # If the rotor is at the end and should move.
