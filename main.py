@@ -21,7 +21,7 @@ def check_combo():
 # Function for the click on button.
 def on_click():
     if not check_combo():
-        alert(text="You choose some equal rotors, the program will stop now." + result, title="Error!",button="OK")
+        alert(text="You choose some equal rotors, the program will stop now.", title="Error!",button="OK")
         window.close()
         sys.exit(0)
 
