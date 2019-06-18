@@ -8,11 +8,11 @@ class Substitutor:
     num_of_letters = 26
 
     @abstractmethod
-    def forwardTrans(self, permutation):
+    def forwardTrans(self, perm):
         pass
 
     @abstractmethod
-    def reverseTrans(self, permutation):
+    def reverseTrans(self, perm):
         pass
 
     # Turn letter to index function.

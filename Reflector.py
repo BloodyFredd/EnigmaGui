@@ -4,8 +4,8 @@ from Translator import Translator
 # The reflector class.
 class Reflector(Translator):
 
-    def __init__(self, permutation):
-        self.reflector = list(permutation)
+    def __init__(self, perm):
+        self.reflector = list(perm)
 
     # The translation of each letter.
     def forwardTrans(self, letter):

@@ -25,6 +25,7 @@ def on_click():
         window.close()
         sys.exit(0)
 
+    # Check what the first given rotor is.
     if str(cb1.currentText()) == "I":
         rotor1 = Rotor(int(textRingOffset1.text()), int(textRingSetting1.text()), "EKMFLGDQVZNTOWYHXUSPAIBRCJ", 17)
     if str(cb1.currentText()) == "II":
@@ -36,6 +37,7 @@ def on_click():
     if str(cb1.currentText()) == "V":
         rotor1 = Rotor(int(textRingOffset1.text()), int(textRingSetting1.text()), "VZBRGITYUPSDNHLXAWMJQOFECK", 26)
 
+    # Check what the second given rotor is.
     if str(cb2.currentText()) == "I":
         rotor2 = Rotor(int(textRingOffset2.text()), int(textRingSetting2.text()), "EKMFLGDQVZNTOWYHXUSPAIBRCJ", 17)
     if str(cb2.currentText()) == "II":
@@ -47,6 +49,7 @@ def on_click():
     if str(cb2.currentText()) == "V":
         rotor2 = Rotor(int(textRingOffset2.text()), int(textRingSetting2.text()), "VZBRGITYUPSDNHLXAWMJQOFECK", 26)
 
+    # Check what the third given rotor is.
     if str(cb3.currentText()) == "I":
         rotor3 = Rotor(int(textRingOffset3.text()), int(textRingSetting3.text()), "EKMFLGDQVZNTOWYHXUSPAIBRCJ", 17)
     if str(cb3.currentText()) == "II":
@@ -61,13 +64,16 @@ def on_click():
     # Default Reflector
     reflector = Reflector("YRUHQSLDPXNGOKMIEBFZCWVJAT")
 
+    # The plugboard.
     plug_board = PlugBoard(textPlug.text())
-    # rotors chosen for the Enigma machine
+
+    # Rotors chosen for the Enigma machine.
     rotors = [rotor1, rotor2, rotor3]
-    # creating the Enigma Machine
+
+    # Creating the Enigma Machine.
     machine = Enigma(rotors, reflector, plug_board)
 
-    # encryption/decryption of the word
+    # encryption/decryption of the word.
     result = machine.encryptDecrypt(textInput.text())
 
     alert(text="The encryption/decryption is: " + result, title="Answer",button="OK")
