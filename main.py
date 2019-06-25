@@ -22,61 +22,64 @@ def check_combo():
 def on_click():
     if not check_combo():
         alert(text="You choose some equal rotors, the program will stop now.", title="Error!",button="OK")
-        window.close()
-        sys.exit(0)
+        #window.close()
+        cb1.setCurrentIndex(0)
+        cb2.setCurrentIndex(1)
+        cb3.setCurrentIndex(2)
+        #sys.exit(0)
+    else:
+        # Check what the first given rotor is.
+        if str(cb1.currentText()) == "I":
+            rotor1 = Rotor(int(textRingOffset1.text()), int(textRingSetting1.text()), "EKMFLGDQVZNTOWYHXUSPAIBRCJ", 17)
+        if str(cb1.currentText()) == "II":
+            rotor1 = Rotor(int(textRingOffset1.text()), int(textRingSetting1.text()), "AJDKSIRUXBLHWTMCQGZNPYFVOE", 5)
+        if str(cb1.currentText()) == "III":
+            rotor1 = Rotor(int(textRingOffset1.text()), int(textRingSetting1.text()), "BDFHJLCPRTXVZNYEIWGAKMUSQO", 22)
+        if str(cb1.currentText()) == "IV":
+            rotor1 = Rotor(int(textRingOffset1.text()), int(textRingSetting1.text()), "ESOVPZJAYQUIRHXLNFTGKDCMWB", 10)
+        if str(cb1.currentText()) == "V":
+            rotor1 = Rotor(int(textRingOffset1.text()), int(textRingSetting1.text()), "VZBRGITYUPSDNHLXAWMJQOFECK", 26)
 
-    # Check what the first given rotor is.
-    if str(cb1.currentText()) == "I":
-        rotor1 = Rotor(int(textRingOffset1.text()), int(textRingSetting1.text()), "EKMFLGDQVZNTOWYHXUSPAIBRCJ", 17)
-    if str(cb1.currentText()) == "II":
-        rotor1 = Rotor(int(textRingOffset1.text()), int(textRingSetting1.text()), "AJDKSIRUXBLHWTMCQGZNPYFVOE", 5)
-    if str(cb1.currentText()) == "III":
-        rotor1 = Rotor(int(textRingOffset1.text()), int(textRingSetting1.text()), "BDFHJLCPRTXVZNYEIWGAKMUSQO", 22)
-    if str(cb1.currentText()) == "IV":
-        rotor1 = Rotor(int(textRingOffset1.text()), int(textRingSetting1.text()), "ESOVPZJAYQUIRHXLNFTGKDCMWB", 10)
-    if str(cb1.currentText()) == "V":
-        rotor1 = Rotor(int(textRingOffset1.text()), int(textRingSetting1.text()), "VZBRGITYUPSDNHLXAWMJQOFECK", 26)
+        # Check what the second given rotor is.
+        if str(cb2.currentText()) == "I":
+            rotor2 = Rotor(int(textRingOffset2.text()), int(textRingSetting2.text()), "EKMFLGDQVZNTOWYHXUSPAIBRCJ", 17)
+        if str(cb2.currentText()) == "II":
+            rotor2 = Rotor(int(textRingOffset2.text()), int(textRingSetting2.text()), "AJDKSIRUXBLHWTMCQGZNPYFVOE", 5)
+        if str(cb2.currentText()) == "III":
+            rotor2 = Rotor(int(textRingOffset2.text()), int(textRingSetting2.text()), "BDFHJLCPRTXVZNYEIWGAKMUSQO", 22)
+        if str(cb2.currentText()) == "IV":
+            rotor2 = Rotor(int(textRingOffset2.text()), int(textRingSetting2.text()), "ESOVPZJAYQUIRHXLNFTGKDCMWB", 10)
+        if str(cb2.currentText()) == "V":
+            rotor2 = Rotor(int(textRingOffset2.text()), int(textRingSetting2.text()), "VZBRGITYUPSDNHLXAWMJQOFECK", 26)
 
-    # Check what the second given rotor is.
-    if str(cb2.currentText()) == "I":
-        rotor2 = Rotor(int(textRingOffset2.text()), int(textRingSetting2.text()), "EKMFLGDQVZNTOWYHXUSPAIBRCJ", 17)
-    if str(cb2.currentText()) == "II":
-        rotor2 = Rotor(int(textRingOffset2.text()), int(textRingSetting2.text()), "AJDKSIRUXBLHWTMCQGZNPYFVOE", 5)
-    if str(cb2.currentText()) == "III":
-        rotor2 = Rotor(int(textRingOffset2.text()), int(textRingSetting2.text()), "BDFHJLCPRTXVZNYEIWGAKMUSQO", 22)
-    if str(cb2.currentText()) == "IV":
-        rotor2 = Rotor(int(textRingOffset2.text()), int(textRingSetting2.text()), "ESOVPZJAYQUIRHXLNFTGKDCMWB", 10)
-    if str(cb2.currentText()) == "V":
-        rotor2 = Rotor(int(textRingOffset2.text()), int(textRingSetting2.text()), "VZBRGITYUPSDNHLXAWMJQOFECK", 26)
+        # Check what the third given rotor is.
+        if str(cb3.currentText()) == "I":
+            rotor3 = Rotor(int(textRingOffset3.text()), int(textRingSetting3.text()), "EKMFLGDQVZNTOWYHXUSPAIBRCJ", 17)
+        if str(cb3.currentText()) == "II":
+            rotor3 = Rotor(int(textRingOffset3.text()), int(textRingSetting3.text()), "AJDKSIRUXBLHWTMCQGZNPYFVOE", 5)
+        if str(cb3.currentText()) == "III":
+            rotor3 = Rotor(int(textRingOffset3.text()), int(textRingSetting3.text()), "BDFHJLCPRTXVZNYEIWGAKMUSQO", 22)
+        if str(cb3.currentText()) == "IV":
+            rotor3 = Rotor(int(textRingOffset3.text()), int(textRingSetting3.text()), "ESOVPZJAYQUIRHXLNFTGKDCMWB", 10)
+        if str(cb3.currentText()) == "V":
+            rotor3 = Rotor(int(textRingOffset3.text()), int(textRingSetting3.text()), "VZBRGITYUPSDNHLXAWMJQOFECK", 26)
 
-    # Check what the third given rotor is.
-    if str(cb3.currentText()) == "I":
-        rotor3 = Rotor(int(textRingOffset3.text()), int(textRingSetting3.text()), "EKMFLGDQVZNTOWYHXUSPAIBRCJ", 17)
-    if str(cb3.currentText()) == "II":
-        rotor3 = Rotor(int(textRingOffset3.text()), int(textRingSetting3.text()), "AJDKSIRUXBLHWTMCQGZNPYFVOE", 5)
-    if str(cb3.currentText()) == "III":
-        rotor3 = Rotor(int(textRingOffset3.text()), int(textRingSetting3.text()), "BDFHJLCPRTXVZNYEIWGAKMUSQO", 22)
-    if str(cb3.currentText()) == "IV":
-        rotor3 = Rotor(int(textRingOffset3.text()), int(textRingSetting3.text()), "ESOVPZJAYQUIRHXLNFTGKDCMWB", 10)
-    if str(cb3.currentText()) == "V":
-        rotor3 = Rotor(int(textRingOffset3.text()), int(textRingSetting3.text()), "VZBRGITYUPSDNHLXAWMJQOFECK", 26)
+        # Default Reflector
+        reflector = Reflector("YRUHQSLDPXNGOKMIEBFZCWVJAT")
 
-    # Default Reflector
-    reflector = Reflector("YRUHQSLDPXNGOKMIEBFZCWVJAT")
+        # The plugboard.
+        plug_board = PlugBoard(textPlug.text())
 
-    # The plugboard.
-    plug_board = PlugBoard(textPlug.text())
+        # Rotors chosen for the Enigma machine.
+        rotors = [rotor1, rotor2, rotor3]
 
-    # Rotors chosen for the Enigma machine.
-    rotors = [rotor1, rotor2, rotor3]
+        # Creating the Enigma Machine.
+        machine = Enigma(rotors, reflector, plug_board)
 
-    # Creating the Enigma Machine.
-    machine = Enigma(rotors, reflector, plug_board)
+        # encryption/decryption of the word.
+        result = machine.encryptDecrypt(textInput.text())
 
-    # encryption/decryption of the word.
-    result = machine.encryptDecrypt(textInput.text())
-
-    alert(text="The encryption/decryption is: " + result, title="Answer",button="OK")
+        alert(text="The encryption/decryption is: " + result, title="Answer",button="OK")
 
 
 # Init the gui.
